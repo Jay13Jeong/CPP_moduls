@@ -36,7 +36,7 @@ void PhoneBook::add_info(void)
 {
     while (1)
     {
-        std::cout << "First name : ";
+        std::cout << "First name\t: ";
         if (!(std::getline(std::cin, first_name)))
             exit(0);
         first_name = trim(first_name);
@@ -46,7 +46,7 @@ void PhoneBook::add_info(void)
     }
     while (1)
     {
-        std::cout << "Last name : ";
+        std::cout << "Last name\t: ";
         if (!(std::getline(std::cin, last_name)))
             exit(0);
         last_name = trim(last_name);
@@ -56,7 +56,7 @@ void PhoneBook::add_info(void)
     }
     while (1)
     {
-        std::cout << "Nick name : ";
+        std::cout << "Nick name\t:";
         if (!(std::getline(std::cin, nick_name)))
             exit(0);
         nick_name = trim(nick_name);
@@ -66,16 +66,16 @@ void PhoneBook::add_info(void)
     }
     while(1)
     {
-        std::cout << "Phone number : ";
+        std::cout << "Phone number\t: ";
         if (!(std::getline(std::cin, phone_number)))
             exit(0);
-        if (chk_all_num(phone_number)) //입력에 숫자이외의 문자가 있다면 다시 입력받는다.
+        if (chk_all_num(phone_number) && (phone_number.length() >= 1)) //입력에 숫자이외의 문자가 있다면 다시 입력받는다.
             break;
         std::cout << "** Phone numbers only use numbers. **" << std::endl;
     }
     while (1)
     {
-        std::cout << "darkest secret... : ";
+        std::cout << "darkest secret...\t: ";
         if (!(std::getline(std::cin, darkest_secret)))
             exit(0);
         darkest_secret = trim(darkest_secret);
