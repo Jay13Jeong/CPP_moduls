@@ -11,6 +11,9 @@ CXX		= c++
 RM		= rm -f
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
+%.o :			%.cpp
+				$(CXX) $(FLAGS) -c -o $@ $<
+
 all:			$(NAME)
 
 $(NAME):		$(OBJS)

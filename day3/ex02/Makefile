@@ -1,9 +1,11 @@
-NAME		=	fixed
-SRCS		=	main.cpp \
-				Fixed.cpp
-OBJS		=	$(SRCS:.cpp=.o)
-CXX			=	c++
-RM			=	rm -f
+NAME			= fragtrap
+SRCS			= main.cpp \
+				ClapTrap.cpp \
+				ScavTrap.cpp \
+				FragTrap.cpp
+OBJS			= $(SRCS:.cpp=.o)
+CXX				= c++
+RM				= rm -f
 FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 %.o :			%.cpp

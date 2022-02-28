@@ -1,14 +1,17 @@
 NAME = account
 SRCS =	./tests.cpp \
 		./Account.cpp
-CC = c++
-CFLANG = -Wall -Wextra -Werror -std=c++98
+CXX = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
 OBJS = $(SRCS:.cpp=.o)
+
+%.o : %.cpp
+	$(CXX) $(FLAGS) -c -o $@ $<
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAG) -o $(NAME) $(OBJS)
+	$(CXX) $(FLAGS) -o $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)

@@ -1,9 +1,9 @@
-NAME		=	fixed
-SRCS		=	main.cpp \
-				Fixed.cpp
-OBJS		=	$(SRCS:.cpp=.o)
-CXX			=	c++
-RM			=	rm -f
+NAME			= claptrap
+SRCS			= main.cpp \
+				ClapTrap.cpp
+OBJS			= $(SRCS:.cpp=.o)
+CXX				= c++
+RM				= rm -f
 FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 %.o :			%.cpp
@@ -11,8 +11,8 @@ FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
-				$(CXX) $(FLAGS) -o $(NAME) $(OBJS)
+$(NAME):		$(OBJS) ClapTrap.hpp
+				$(CXX) $(FLAGS) -o $(NAME) $(OBJS) -I ClapTrap.hpp
 
 clean:
 				$(RM) $(OBJS)

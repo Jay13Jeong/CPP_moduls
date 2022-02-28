@@ -4,13 +4,16 @@ SRCS =	./main.cpp \
 		./newZombie.cpp \
 		./randomChump.cpp
 CXX	=	c++
-FLANG = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 OBJS =	$(SRCS:.cpp=.o)
+
+%.o : %.cpp
+	$(CXX) $(FLAGS) -c -o $@ $<
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(FLAG) -o $(NAME) $(OBJS)
+	$(CXX) $(FLAGS) -o $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)

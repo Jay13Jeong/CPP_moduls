@@ -3,13 +3,16 @@ SRCS = ./main.cpp \
 	./ZombieHorde.cpp
 CXX = c++
 NAME = zombies
-CFLANG = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 OBJS = $(SRCS:.cpp=.o)
+
+%.o : %.cpp
+	$(CXX) $(FLAGS) -c -o $@ $<
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CFLAG) -o $(NAME) $(OBJS)
+	$(CXX) $(FLAGS) -o $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)
