@@ -11,7 +11,7 @@ int main()
 
 	std::cout << "=== Array of Animal ======" << std::endl;
 	
-	Animal* animals[6];
+	Animal* animals[4];
 
 	//2번까지 개, 4번까지는 고양이로 채우기.
 	for (int n = 0; n < 2; n++)
