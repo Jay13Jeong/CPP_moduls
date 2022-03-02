@@ -102,15 +102,6 @@ void	Bureaucrat::signForm( Form &f )
 //매개변수로 받은 양식의 실행을 출력하는 메소드.
 void	Bureaucrat::executeForm( Form const &f )
 {
-	//양식의 서명여부에 따라 성공여부를 출력을 한다.
-	try {
-		const_cast<Form&>(f).beSigned(*this);
-		std::cout << this->name << " signs " << f.getName() << std::endl;
-	} catch(const std::exception& e) {
-		std::cout << this->name << " cannot sign " << f.getName();
-		std::cout << " because " << e.what() << std::endl;
-		return ;
-	}
 	//실행등급보다 낮으면 예외처리한다.
 	try {
 		f.execute(*this);
