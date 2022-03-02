@@ -92,6 +92,5 @@ std::ostream& operator << ( std::ostream &out, Form &f )
 	out << (f.getisSign() == true ? "signed" : "not signed");
 	out << ", required grade is " << f.getReqGrade();
 	out << ", required execute grade is " << f.getReqExecute();
-	out << std::endl;
 	return (out);
 }

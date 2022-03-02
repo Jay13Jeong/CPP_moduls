@@ -82,7 +82,7 @@ void	Bureaucrat::garde_increment()
 //cout '<<' 오버로딩 메소드.
 std::ostream& operator << ( std::ostream &out, Bureaucrat &b2 )
 {
-	out << b2.getName() << ", bureaucrat grade " << b2.getGrade() << std::endl;
+	out << b2.getName() << ", bureaucrat grade " << b2.getGrade();
 	return (out);
 }
 
