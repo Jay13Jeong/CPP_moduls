@@ -40,17 +40,16 @@ void	Karen::complain( std::string level )
 {
 	
 	std::string lvl_list[] = {"debug", "info", "warning", "error"};
+	int i = std::find(lvl_list, lvl_list + 4, level) - lvl_list;
 
-	/* 각 배열에 private 메소드의 주소를 넣는다. */
-	this->act[0] = &Karen::debug;
-	this->act[1] = &Karen::info;
-	this->act[2] = &Karen::warning;
-	this->act[3] = &Karen::error;
-	/* 매개변수에 해당하는 행동을 포인터와 연결된 멤버함수로 실행*/
-	for (int i = 0; i < 4; i++)
-		if (level == lvl_list[i])
-		{
-			(this->*act[i])();	
-			return ;
-		}
+	switch (i)
+	{
+		case 0: act = &Karen::debug;break;
+		case 1: act = &Karen::info;break;
+		case 2: act = &Karen::warning;break;
+		case 3: act = &Karen::error;break;
+		default:
+			return;
+	}
+	(this->*act)();
 }

@@ -11,9 +11,9 @@ class Karen
 		void	info( void );
 		void	warning( void );
 		void	error( void );
-		/* 4가지의 멤버함수ptr을 담을 수 있는 배열 */
+		/* 멤버함수포인터 메소드 */
 		/* 반환타입, 클래스::멤버함수 이름, (매개변수)*/
-		void	(Karen:: *act[4]) (void);
+		void	(Karen:: *act) (void);
 	public:
 		void	complain( std::string level );
 };
