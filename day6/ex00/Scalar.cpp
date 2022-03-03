@@ -59,8 +59,28 @@ Scalar::Scalar(  std::string token  )
     this->isC = true;
 }
 
-//소멸자
+//소멸자.
 Scalar::~Scalar(){}
+
+//복사생성자.
+Scalar::Scalar( const Scalar &s2) { *this = s2; }
+
+//대입연산자 오버로딩.
+Scalar& Scalar::operator=( const Scalar &s2 )
+{
+	if (this == &s2)
+		return (*this);
+	this->c = s2.c;
+	this->isC = s2.isC;
+	this->i = s2.i;
+	this->isI = s2.isI;
+	this->f = s2.f;
+	this->isF = s2.isF;
+	this->d = s2.d;
+	this->isD = s2.isD;
+	this->point_len = s2.point_len;
+	return (*this);
+}
 
 void	Scalar::printInfMinus() const{
     std::cout << "char: impossible" << std::endl;

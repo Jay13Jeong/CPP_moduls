@@ -30,8 +30,14 @@ const char* Intern::FormCanNotFound::what() const throw()
 Form*	Intern::makeForm( std::string form_type, std::string target )
 {
 	std::string	lst[] = { "shrubbery creation", "robotomy request", "presidential pardon" };
-	//find의 반환된 주소값과 기존 첫 주소의 차이로 찾으려는 index를 얻는다.
-	int	i = std::find(lst, lst + 3, form_type) - lst;
+	int	i = -1;
+
+	for (int k = 0; k < 4; k++)
+		if (form_type == lst[k])
+		{
+			i = k;
+			break;
+		}
 
 	switch(i)
 	{

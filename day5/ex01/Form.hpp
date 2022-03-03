@@ -2,6 +2,8 @@
 #define FORM_HPP
 
 #include <iostream>
+#include <exception>
+#include <string>
 
 class Bureaucrat;
 

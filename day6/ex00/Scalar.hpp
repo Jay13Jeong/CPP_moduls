@@ -2,6 +2,7 @@
 #define CASTS_HPP
 
 #include <iostream>
+#include <string>
 #include <cmath>
 
 class Scalar
@@ -21,6 +22,8 @@ class Scalar
 		Scalar();
 		Scalar( std::string token );
 		~Scalar();
+		Scalar( const Scalar &s2);
+		Scalar & operator = ( const Scalar &s2 );
 		void	printScalar() const;
 		void	printInfMinus() const;
 		void	printInfPlus() const;

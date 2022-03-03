@@ -42,7 +42,15 @@ int main(int ac, char **av)
 
 	//inf관련 문자인지 검사.
 	std::string	symbol[] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
-	int i = std::find(symbol, symbol + 6, av[1]) - symbol;
+	int i = 99;
+	
+	for (int k = 0; k < 4; k++)
+		if (av[1] == symbol[k])
+		{
+			i = k;
+			break;
+		}
+	
 	if (i < 6)
 	{
 		if (i == 0 || i == 3)

@@ -1,5 +1,14 @@
 #include "Base.hpp"
 
+//테스트용 Data구조체.
+struct Data
+{
+	long long	ll;
+	int			i;
+	char		c;
+	bool		b;
+};
+
 //직렬화 함수.
 uintptr_t serialize(Data* ptr)
 {
