@@ -7,9 +7,9 @@ int main()
 	{
 		Bureaucrat jim("jim", 2);
 
-		std::cout << jim;
+		std::cout << jim << std::endl;
 		jim.garde_increment();
-		std::cout << jim;
+		std::cout << jim << std::endl;
 		jim.garde_increment();
 	}
 	catch(const std::exception& e)
@@ -22,9 +22,9 @@ int main()
 	{
 		Bureaucrat bob("bob", 149);
 
-		std::cout << bob;
+		std::cout << bob << std::endl;
 		bob.grade_decrement();
-		std::cout << bob;
+		std::cout << bob << std::endl;
 		bob.grade_decrement();
 	}
 	catch(const std::exception& e)
