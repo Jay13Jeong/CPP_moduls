@@ -1,4 +1,5 @@
-#include "Base.hpp"
+#include <iostream>
+#include <string>
 
 //테스트용 Data구조체.
 struct Data
