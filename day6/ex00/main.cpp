@@ -31,26 +31,40 @@ bool  check_float(char *str)
     return (true);
 }
 
+int	ft_strlen(const char *s)
+{
+	int	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
+}
+
 int main(int ac, char **av)
 {
 	//인자는 하나만 받는다.
-	if (ac != 2 || (strlen(av[1]) == 0))
+	if (ac != 2 || (ft_strlen(av[1]) == 0))
 	{
 		Scalar().printScalar();
 		return (1);
 	}
 
+	std::string token(av[1]);
+
 	//inf관련 문자인지 검사.
 	std::string	symbol[] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
 	int i = 99;
 	
-	for (int k = 0; k < 4; k++)
-		if (av[1] == symbol[k])
+	for (int k = 0; k < 6; k++)
+	{
+		if (token == symbol[k])
 		{
 			i = k;
 			break;
 		}
-	
+	}
+
 	if (i < 6)
 	{
 		if (i == 0 || i == 3)
@@ -62,7 +76,6 @@ int main(int ac, char **av)
 		return (0);
 	}
 
-	std::string token(av[1]);
 	//단일문자일 때.
 	if (token.length() == 1)
 	{
