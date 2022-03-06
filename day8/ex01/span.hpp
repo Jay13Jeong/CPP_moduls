@@ -6,6 +6,7 @@
 #include <vector>
 #include <algorithm>
 #include <exception>
+#include <list>
 
 class Span
 {
@@ -21,6 +22,19 @@ class Span
 		void	addNumber( int num );
 		int		longestSpan();
 		int		shortestSpan();
+
+		//better "addNumber" 템플릿.
+		template<typename T>
+		void	addNumber(T start, T end)
+		{
+			while (start != end)
+			{
+				if (this->N == this->vec.size())
+					throw Span::CanNotAdd();
+				else
+					this->vec.push_back(*start++);
+			}
+		}
 
 		class CanNotCompare: public std::exception
 		{

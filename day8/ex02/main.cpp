@@ -39,16 +39,10 @@ int main()
 	for (int i = 0; i < 5; i++)
 		ms.push(i);
 
-	//순방향 출력
+	//iterator 출력
 	MutantStack<int>::iterator iter = ms.begin();	
 	while (iter != ms.end())
 		std::cout << *iter++ << std::endl;
-	std::cout << std::endl;
-
-	//역방향 출력
-	MutantStack<int>::reverse_iterator iter2 = ms.rbegin();	
-	while (iter2 != ms.rend())
-		std::cout << *iter2++ << std::endl;
 	std::cout << std::endl;
 
 	return 0;

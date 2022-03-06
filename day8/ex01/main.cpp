@@ -42,8 +42,12 @@ int main()
 	try
 	{
 		Span sp = Span(10000);
+		std::list<int> lst;
+
 		for (int i = 1; i <= 10000; i++)
-			sp.addNumber(i);
+			lst.push_front(i);
+
+		sp.addNumber(lst.begin(), lst.end());
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}
