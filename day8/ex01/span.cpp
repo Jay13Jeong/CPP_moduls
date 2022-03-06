@@ -65,7 +65,13 @@ int		Span::shortestSpan()
 	std::vector<int> temp;
 	for (unsigned int i = 0; i < (this->vec.size()); i++)
 		temp.push_back(this->vec[i]);
-	//오름차순 정렬 후 앞의 두 값의 차를 반환.
+	//오름차순 정렬 후 각 쌍의 가장 작은 차를 반환.
 	std::sort(temp.begin(), temp.end());
-	return (temp[1] - temp[0]);
+	int small = temp[1] - temp[0];
+	for (unsigned int i = 2; i < temp.size(); i++)
+	{
+		if (small > temp[i] - temp[i - 1])
+			small = temp[i] - temp[i - 1];
+	}
+	return (small);
 }

@@ -45,11 +45,10 @@ int main()
 		std::cout << *iter++ << std::endl;
 	std::cout << std::endl;
 
-
 	//역방향 출력
-	MutantStack<int>::iterator iter2 = ms.end();	
-	while ((iter2--) != ms.begin())
-		std::cout << *iter2 << std::endl;
+	MutantStack<int>::reverse_iterator iter2 = ms.rbegin();	
+	while (iter2 != ms.rend())
+		std::cout << *iter2++ << std::endl;
 	std::cout << std::endl;
 
 	return 0;
