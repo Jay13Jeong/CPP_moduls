@@ -1,13 +1,13 @@
 # CPP_moduls
 "Object Oriented Programming" learning project
 
-<h2>Day0 준비운동</h2>
+<h2>Day0 C++연습</h2>
 <ol>
   <li>알파벳문자열로 인자를 주면 모두 대문자로 변경해서 출력하는 프로그램</li>
   <li>전화번호부 프로그램.</li>
 </ol>
 
-<h2>Day1 준비운동2</h2>
+<h2>Day1 Class</h2>
 <ol>
   <li>zombie클래스로 객체를 생성하고, 그 객체의 announce메소드를 실행</li>
   <li>표준입력으로 받은 숫자 (n)만큼 zombie객체 생성을 하고, 각각 객체들이 announce메소드를 실행</li>
